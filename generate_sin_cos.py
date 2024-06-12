@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# 设置绘图参数
+# Set plotting parameters
 plot_params = {
     'legend.fontsize': 26,
     'figure.figsize': (16, 9),
@@ -17,9 +17,9 @@ def f(t):
 
 def generate_data_with_time_dependent_heteroscedastic_noise(num_points=1800):
     t = np.linspace(-10, 10, num_points)
-    noise_variances = 0.1 + 1 * np.sin(2 * np.pi * t / 10)  # 时间依赖的噪音方差函数
-    noise_variances = np.maximum(noise_variances, 0)  # 确保所有噪音方差都大于等于 0
-    y = f(t) + np.random.normal(0, np.sqrt(noise_variances), size=num_points)  # 添加时间依赖的噪音
+    noise_variances = 0.1 + 1 * np.sin(2 * np.pi * t / 10)  # Time-dependent noise variance function
+    noise_variances = np.maximum(noise_variances, 0)  # Ensure all noise variances are greater than or equal to 0
+    y = f(t) + np.random.normal(0, np.sqrt(noise_variances), size=num_points)  # Add time-dependent noise
     return t, y
 
 def plot_time_series(t, y):
@@ -32,7 +32,7 @@ def plot_time_series(t, y):
     plt.grid(True)
     plt.show()
 
-# 生成数据并绘图
+# Generate data and plot
 t, y = generate_data_with_time_dependent_heteroscedastic_noise()
 np.savetxt('data/sin_cos_time_dependent_heteroscedastic.txt', y, delimiter='', newline='\n')
 plot_time_series(t, y)
