@@ -32,7 +32,5 @@ Ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-## Contact
-Zheping Wang - ZhepingWang6@csu.edu.cn
 
 
