@@ -4,7 +4,7 @@ from abnse import *
 import statsmodels.api as sm
 import pandas as pd
 import seaborn as sns
-method_ = 'ABNSE'
+method_ = 'PBNSE'
 Data_name = ['hr2']
 global wq, vq, theta, sigema_n
 u = -1
@@ -98,7 +98,7 @@ while u < 0:
         fig_time, ax_time = plt.subplots(figsize=(16, 9))
         fig_real, ax_real = plt.subplots(figsize=(16, 9))
         fig_imag, ax_imag = plt.subplots(figsize=(16, 9))
-        if method_ == 'ABNSE':
+        if method_ == 'PBNSE':
             for i in range(m):
                 index = [time_ind.tolist().index(j) for j in time_ind if tao[i] - b / 2-1 <= j <= tao[i] + b / 2] # find the index of each segment
                 if i == 0:
